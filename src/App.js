@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Alarm Clock</h1>
+      <div className="clock">
+        <div className="time">05.34 AM</div>
+      </div>
+      <button type="button" className="add-alarm">
+        Add alarm
+      </button>
+      <ul className="alarms">
+        <li>
+          <div className="alarm-time">
+            07:00 AM
+          </div>
+          <div className="alarm-options">
+            <button type="button">Edit</button>
+            <button type="button">Delete</button>
+          </div>
+        </li>
+        <li>
+          <div className="alarm-time">08:30 AM</div>
+          <div className="alarm-options">
+            <button type="button">Edit</button>
+            <button type="button">Delete</button>
+          </div>
+        </li>
+      </ul>
     </div>
   );
 }
