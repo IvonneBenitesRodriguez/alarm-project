@@ -1,34 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Clock from './components/Clock';
 import './App.css';
 
 function App() {
+  const [alarmTime, setAlarmTime] = useState(null);
+
+  const handleSetAlarm = (time) => {
+    setAlarmTime(time);
+  };
+
   return (
     <div className="App">
       <h1>Alarm Clock</h1>
-      <div className="clock">
-        <div className="time">05.34 AM</div>
-      </div>
-      <button type="button" className="add-alarm">
-        Add alarm
-      </button>
-      <ul className="alarms">
-        <li>
-          <div className="alarm-time">
-            07:00 AM
-          </div>
-          <div className="alarm-options">
-            <button type="button">Edit</button>
-            <button type="button">Delete</button>
-          </div>
-        </li>
-        <li>
-          <div className="alarm-time">08:30 AM</div>
-          <div className="alarm-options">
-            <button type="button">Edit</button>
-            <button type="button">Delete</button>
-          </div>
-        </li>
-      </ul>
+      <Clock />
+      <button type="button" onClick={() => handleSetAlarm('12:00 PM')}>Set Alarm</button>
+      <p>
+        Alarm Time:
+        {alarmTime}
+      </p>
     </div>
   );
 }
