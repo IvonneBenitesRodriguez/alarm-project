@@ -15,7 +15,7 @@ function App() {
       <Clock />
       <button type="button" onClick={() => handleSetAlarm('12:00 PM')}>Set Alarm</button>
       <p>
-        Alarm Time:
+        My Alarm Time:
         {alarmTime}
       </p>
     </div>
